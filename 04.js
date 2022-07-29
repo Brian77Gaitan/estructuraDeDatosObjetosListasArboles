@@ -21,7 +21,13 @@ const { Stack } = require("./DS");
 //   ✔️crearStack("RET****ORNA**R*FA*L**SO") => "Stack vacío"
 
 function crearStack(palabra) {
-
+	if (palabra.length === 0) return false;
+	let pila = new Stack();  		// Stack = pila
+	for (var i = 0; i < palabra.length; i++) {
+		if (palabra[i] === "*" && pila.size() === 0) return "Stack vacío";
+		if (palabra[i] !== "*") pila.push(palabra[i]);
+		else pila.pop();
+	} return pila;
 }
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
