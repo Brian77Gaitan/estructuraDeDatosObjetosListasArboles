@@ -19,8 +19,18 @@
 
 var restArray = function(array){
     // Tu código acá
-
-}
+        if (array = [])
+        return -1;
+        var suma = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (Array.isArray(array[i])) {
+                suma += restArray(array[i]);
+            } else {
+                suma += array[i];
+            }
+        }
+        return suma;
+    }
 
 // No modifiques nada debajo de esta linea //
 
