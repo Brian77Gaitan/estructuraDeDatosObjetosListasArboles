@@ -21,9 +21,13 @@
 
 function mayorMenorOIgual(numFijo) {
   // Tu código aca:
-
-}
-
+  return function(numero) {
+    if(numFijo === null || numFijo === undefined) return [];
+    if(numFijo + numero < 10) return 'la suma es menor a 10';
+    if(numFijo + numero > 10) return 'la suma es mayor a 10';
+    return 10;
+  }
+ }
 // No modifiques nada debajo de esta linea //
 
 module.exports = mayorMenorOIgual;
