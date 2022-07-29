@@ -19,7 +19,22 @@
 
 var restArray = function(array){
     // Tu código acá
-        if (array = [])
+       if (array.length < 1) { return 0}
+  
+      let cont = 0;
+      let sum = 0;
+  
+      for (let i = 0 ; i < array.length ; i ++) {
+        if (Array.isArray (array [i])) {
+          cont ++ ;
+          sum += restArray (array [i]);
+        } else {
+          sum += array [i];
+        }
+      }
+      return sum - cont
+ };
+        /*if (array = [])
         return -1;
         var suma = 0;
         for (let i = 0; i < array.length; i++) {
@@ -30,7 +45,7 @@ var restArray = function(array){
             }
         }
         return suma;
-    }
+    }*/
 
 // No modifiques nada debajo de esta linea //
 
