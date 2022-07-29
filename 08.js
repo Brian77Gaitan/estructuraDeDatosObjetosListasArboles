@@ -20,7 +20,25 @@
     
 function countDeep(arr) {
   // Tu código aca:
-
+  let num = 0;         //countDeep = contar en profundidad
+  let str = 0;
+  let bool = 0;
+  let und = 0;
+  let arrays = 1;
+  function segunda(arr) {
+    for(let i = 0; i < arr.length; i++) {
+      if(Array.isArray(arr[i])) {
+        arrays++;
+        segunda(arr[i]);
+      }
+      if(typeof arr[i] === 'number') num++;
+      if(typeof arr[i] === 'string') str++;
+      if(typeof arr[i] === 'boolean') bool++;
+      if(typeof arr[i] === 'undefined') und++;
+    }
+  }
+  segunda(arr);
+  return (((arrays - num) * str) / bool) ** und;
 } 
 // No modifiques nada debajo de esta linea //
 
