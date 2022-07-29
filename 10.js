@@ -10,8 +10,44 @@
 
 function insertAndSort(array, obj) {
   // Tu código acá
-  
+  var properties = []        // properties = propiedades
+     
+for(let props in obj){
+  array.push(obj[props])
+
 }
+let arrei = array.concat(array)
+for(var i = 0; i < array.length; i++){
+var lowest = i
+for(var j = i + 1; j < array.length; j++){
+    if(array[j] < array[lowest]){
+        lowest = j
+    }
+}
+var swap = array[i]             // swap = intercambiar
+array[i] = array[lowest]
+array[lowest] = swap            //lowest = mas bajo
+}
+return array
+}
+
+ /*for(let prop in obj) {
+    array.push(obj[prop]);
+  }
+  let swap = true;
+  while(swap) {
+    swap = false;
+    for(let i = 0; i < array.length - 1; i++) {
+      if(array[i] > array[i+1]) {
+        let aux = array[i];
+        array[i] = array[i+1];
+        array[i+1] = aux;
+        swap = true;
+      }
+    }
+  }
+  return array;
+}*/
 
 //⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = insertAndSort;
